@@ -25,7 +25,11 @@
         }
     }
     ```
-4. If you're using an OpenAI model, specify an API key using the `OPENAI_API_KEY` environment variable, or by setting it as a key in [`INIT_KWARGS`](ai-backends.md#init-kwargs).
-5. If you've restricted RichText features, add `ai` to your list of features.
+3. Apply migrations:
+   ```bash
+   python manage.py migrate
+   ```
+5. If you're using an OpenAI model, specify an API key using the `OPENAI_API_KEY` environment variable, or by setting it as a key in [`INIT_KWARGS`](ai-backends.md#init-kwargs).
+6. If you've restricted RichText features, add `ai` to your list of features.
     * By default, Wagtail will include all registered features on `RichTextField` and `RichTextBlock` instances. However, [features can be restricted](https://docs.wagtail.org/en/stable/advanced_topics/customisation/page_editing_interface.html#limiting-features-in-a-rich-text-field).
     * If you've restricted features, you must add `ai` to the list of features for the Wagtail AI button to appear on RichText fields/blocks.
